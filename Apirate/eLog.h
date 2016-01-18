@@ -15,6 +15,6 @@
  	* the implementor.
  	*/
  	enum eLog {
- 		INFO, WARNING, ERROR
- 	}
+ 		INFO, WARNING, FATAL
+ 	};
  }

@@ -16,5 +16,5 @@
  	*/
  	enum eMethod {
  		GET, POST, HEAD, OPTIONS, CONNECT, TRACE, PUT, PATCH, DELETE
- 	}
+ 	};
  }

@@ -17,5 +17,5 @@
  	*/
  	enum eModule {
  		CONNECTION, PREPROCESS, PROCESS, POSTPROCESS
- 	}
+ 	};
  }

@@ -21,7 +21,7 @@ namespace Apirate {
 	*/
 	class AServer {
 	public:
-		virtual ~Aserver() {};
+		virtual ~AServer() {};
 
 		/**
 		* @brief The main running function of the server
