@@ -15,5 +15,5 @@
  	*/
  	enum eQuery {
  		REQUEST, RESPONSE
- 	}
+ 	};
  }
