@@ -101,5 +101,14 @@ namespace Apirate {
 		* @return The processed query.
 		*/
 		virtual IQuery* exec(IQuery* query) = 0;
+
+		/**
+		* @brief Clones a module.
+		* @details This method allows the implementor to clone a given module
+		* in order to retrieve a copy of it.
+		* @param module The module to clone.
+		* @return The cloned module.
+		*/
+		virtual IModule* clone(const IModule* module);
 	};
 }

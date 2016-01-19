@@ -22,6 +22,16 @@ namespace Apirate {
 		virtual ~ILogger() {};
 
 		/**
+		* @brief Sets the level of logs to be displayed.
+		* @details This method allows the implementor to specify above which
+		* eLog type the logger is going to log. Lesser than this level, all
+		* logs must be ignored.
+		* @param type The lesser level of logs to be displayed.
+		* @return Itself
+		*/
+		virtual ILogger& setLevel(eLog type) = 0;
+
+		/**
 		* @brief Logs an information to a stream
 		* @details This method allows the implementor to identify informations
 		* logged by the server.
@@ -52,10 +62,10 @@ namespace Apirate {
 		* @brief Specifies a specific file to save the logs in.
 		* @details This method allows the implementor to log in a file specified
 		* as a parameter. Nevertheless, standard output shall not be disabled.
-		* @param file The file to log in.
+		* @param filename The file to log in.
 		* @return Itself
 		*/
-		virtual ILogger& export(const std::string& file) = 0;
+		virtual ILogger& saveTo(const std::string& filename) = 0;
 
 		/**
 		* @brief Allows the logging messages to be colored.

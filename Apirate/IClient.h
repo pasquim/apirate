@@ -39,11 +39,20 @@ namespace Apirate {
 		virtual IResponse* getResponse() = 0;
 
 		/**
+		* @brief Add a response to the client.
+		* @details This method allowd the implementor to add a response to the
+		* client.
+		* @param response The response to add to the client in order to be sent.
+		* @return Itself
+		*/
+		virtual IClient& addResponse(IReponse* respone) = 0;
+
+		/**
 		* @brief Getter for the client's socket
 		* @details This method allows the implementor to retrieve the socket
 		* associated to a client.
 		* @return The client's socket.
 		*/
-		virtual ISocket& getSocket() const = 0;
+		virtual const ISocket& getSocket() const = 0;
 	};
 }

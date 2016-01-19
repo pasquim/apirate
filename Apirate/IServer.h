@@ -1,5 +1,5 @@
 /***
- * AServer.h
+ * IServer.h
  *
  * Project : 	Apirate
  * Created on:  Jan 2, 2016
@@ -12,6 +12,7 @@
 #include <vector>
 #include <IExecutionProcess.h>
 #include <IModule.h>
+#include <ILogger.h> 
 
 namespace Apirate {
 	/**
@@ -20,11 +21,9 @@ namespace Apirate {
 	* @details This class represents the most essential functions needed by the
 	* server to ensure a clean functionning.
 	*/
-	class AServer {
-		std::vector<IExecutionProcess*> _processes;
-
+	class IServer {
 	public:
-		virtual ~AServer() {};
+		virtual ~IServer() {};
 
 		/**
 		* @brief The main running function of the server
@@ -43,30 +42,26 @@ namespace Apirate {
 		virtual unsigned int stop() = 0;
 
 		/**
-		* @brief Getter for the Execution Processes
-		* @details This methos allows the implementor to access the Execution
-		* Process instances of the server.
-		* @return A reference on the server's Execution Process vector.
-		*/
-		virtual std::vector<IExecutionProcess*>& getExecutionProcesses() const = 0;
-
-		/**
 		* @brief Attach a module to the server's Execution Processes.
 		* @details This method allows the implementor to attach a module to the
 		* Execution Process instances which are currently in the server.
 		* @param module A pointer to the module which is going to be attached.
 		* @param name A unique identifier to this module.
+		* @param attachTo If specified, the module is only going to be attached
+		* the specified IExecutionProcess.
 		* @return Itself
 		*/
-		virtual AServer& attachModule(IModule* module, const std::string& name) = 0;
+		virtual IServer& attachModule(IModule* module, const std::string& name, IExecutionProcess* attachTo = nullptr) = 0;
 
 		/**
 		* @brief Detach a module to the server's Execution Processes.
 		* @details This method allows the implementor to detach a module to the
 		* Execution Process instances which are currently via the server.
 		* @param name A unique identifier to the module to remove.
+		* @param attachTo If specified, the module is only going to be attached
+		* the specified IExecutionProcess
 		* @return A pointer to the detached module.
 		*/
-		virtual IModule* detachModule(const std::string& name) = 0;
+		virtual IModule* detachModule(const std::string& name, IExecutionProcess* attachTo = nullptr) = 0;
 	};
 }

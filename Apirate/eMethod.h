@@ -15,6 +15,7 @@
  	* be updated if new methods were to be defined.
  	*/
  	enum eMethod {
- 		GET, POST, HEAD, OPTIONS, CONNECT, TRACE, PUT, PATCH, DELETE
+ 		HTTP_GET, HTTP_POST, HTTP_HEAD, HTTP_OPTIONS,
+ 		HTTP_CONNECT, HTTP_TRACE, HTTP_PUT, HTTP_PATCH, HTTP_DELETE
  	};
  }
