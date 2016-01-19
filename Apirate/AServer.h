@@ -9,6 +9,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include <IExecutionProcess.h>
 #include <IModule.h>
 
@@ -20,6 +21,8 @@ namespace Apirate {
 	* server to ensure a clean functionning.
 	*/
 	class AServer {
+		std::vector<IExecutionProcess*> _processes;
+
 	public:
 		virtual ~AServer() {};
 
@@ -40,17 +43,17 @@ namespace Apirate {
 		virtual unsigned int stop() = 0;
 
 		/**
-		* @brief Getter for the Execution Process
+		* @brief Getter for the Execution Processes
 		* @details This methos allows the implementor to access the Execution
-		* Process instance of the server.
-		* @return A reference on the server's Execution Process.
+		* Process instances of the server.
+		* @return A reference on the server's Execution Process vector.
 		*/
-		virtual IExecutionProcess& getExecutionProcess() const = 0;
+		virtual std::vector<IExecutionProcess*>& getExecutionProcesses() const = 0;
 
 		/**
-		* @brief Attach a module to the server's Execution Process.
+		* @brief Attach a module to the server's Execution Processes.
 		* @details This method allows the implementor to attach a module to the
-		* Execution Process via the server.
+		* Execution Process instances which are currently in the server.
 		* @param module A pointer to the module which is going to be attached.
 		* @param name A unique identifier to this module.
 		* @return Itself
@@ -58,9 +61,9 @@ namespace Apirate {
 		virtual AServer& attachModule(IModule* module, const std::string& name) = 0;
 
 		/**
-		* @brief Detach a module to the server's Execution Process.
+		* @brief Detach a module to the server's Execution Processes.
 		* @details This method allows the implementor to detach a module to the
-		* Execution Process via the server.
+		* Execution Process instances which are currently via the server.
 		* @param name A unique identifier to the module to remove.
 		* @return A pointer to the detached module.
 		*/

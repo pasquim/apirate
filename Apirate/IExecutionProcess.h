@@ -66,8 +66,17 @@ namespace Apirate {
 		virtual IExecutionProcess& detachModule(const std::string& name) = 0;
 
 		/**
+		* @brief Setter for the client.
+		* @details This method allows the implementor to set a client in the
+		* ExecutionProcess.
+		* @param client A pointer to the client to refer in the ExecutionProcess.
+		* @return Itself
+		*/
+		virtual IExecutionProcess& setClient(IClient* client) = 0;
+
+		/**
 		* @brief Getter for the client.
-		* @details This method allows theimplementor to retrieve a pointer to
+		* @details This method allows the implementor to retrieve a pointer to
 		* the client who's getting its query executed.
 		* @return A pointer to the client.
 		*/
