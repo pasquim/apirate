@@ -44,6 +44,15 @@ namespace Apirate {
 	 	*/
 		virtual const std::string& getHeader(const std::string& header) = 0;
 
+		/**
+		* @brief Retrieve a header by its name.
+		* @details This methos allows the implementor to get the value associated
+		* to a header by its name via the [] operator
+ 		* @param header The name of the header the implementor wants to retrieve.
+ 		* @return The value associated to the header
+		*/
+		virtual const std::string& operator[](const std::string& header) = 0;
+
  		/**
  		* @brief Getter for all headers
  		* @details This method allows the implementor to retrieve all the headers
