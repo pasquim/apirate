@@ -104,11 +104,10 @@ namespace Apirate {
 
 		/**
 		* @brief Clones a module.
-		* @details This method allows the implementor to clone a given module
+		* @details This method allows the implementor to clone the module
 		* in order to retrieve a copy of it.
-		* @param module The module to clone.
 		* @return The cloned module.
 		*/
-		virtual IModule* clone(const IModule* module);
+		virtual IModule* clone() = 0;
 	};
 }
