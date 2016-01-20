@@ -79,13 +79,13 @@ namespace Apirate {
 		virtual const std::string& getData() const = 0;
 
 		/**
-        * @brief Setter for the data of the query
-        * @details This method allows the implementor to set the content of
-        * the query allowing this operation only if the content has been
-        * retrieved at least once.
+		* @brief Setter for the data of the query
+		* @details This method allows the implementor to set the content of
+		* the query allowing this operation only if the content has been
+		* retrieved at least once.
 		* @param data The data to set in the query.
-        * @return Itself
-        */
+		* @return Itself
+		*/
 		virtual IQuery& modifyData(const std::string &data) = 0;
 
  		/**
@@ -112,7 +112,7 @@ namespace Apirate {
  		* @param version A string representing the HTTP protocol version of
  		* the query.
  		* @return Itself
-	 	*/
+		*/
 		virtual IQuery& setVersion(const std::string& version) = 0;
 
  		/**
