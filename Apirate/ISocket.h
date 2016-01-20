@@ -16,11 +16,11 @@
  typedef int SOCKET;
 #endif
 
- namespace Apirate {
- 	/**
- 	* @brief A basic interface for socket implementation
- 	* @details This interface contains the minimum needed informations for a server
- 	* to identify a client at its connection.
+namespace Apirate {
+	/**
+	* @brief A basic interface for socket implementation
+	* @details This interface contains the minimum needed informations for a server
+	* to identify a client at its connection.
 	*/
 	class ISocket {
 	public:
@@ -68,4 +68,4 @@
 		*/
 		virtual const unsigned short getPort() const = 0;
 	};
- }
+}

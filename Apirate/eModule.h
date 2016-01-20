@@ -8,14 +8,14 @@
 
 #pragma once
 
- namespace Apirate {
- 	/**
- 	* @brief The eModule enum defines at which point a module must do its work.
- 	* @details This enum allows the implementor to order the modules of the
- 	* processing queue depending on the moment they are wupposed to act on a
- 	* query.
- 	*/
- 	enum eModule {
- 		CONNECTION, PREPROCESS, PROCESS, POSTPROCESS
- 	};
- }
+namespace Apirate {
+	/**
+	* @brief The eModule enum defines at which point a module must do its work.
+	* @details This enum allows the implementor to order the modules of the
+	* processing queue depending on the moment they are wupposed to act on a
+	* query.
+	*/
+	enum eModule {
+		CONNECTION, PREPROCESS, PROCESS, POSTPROCESS
+	};
+}
