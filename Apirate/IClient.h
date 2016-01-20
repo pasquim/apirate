@@ -20,6 +20,7 @@ namespace Apirate {
 	* its informations.
 	*/
 	class IClient {
+	public:
 		virtual ~IClient() {};
 
 		/**
@@ -54,7 +55,7 @@ namespace Apirate {
 		* @param response The response to add to the client.
 		* @return Itself
 		*/
-		virtual IClient& addResponse(IReponse* response) = 0;
+		virtual IClient& addResponse(IResponse* response) = 0;
 
 		/**
 		* @brief Getter for the client's socket

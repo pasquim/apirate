@@ -13,7 +13,7 @@
 #ifndef __unix__
  #include <winsock2.h>
 #else
- typedef int SOCKET
+ typedef int SOCKET;
 #endif
 
  namespace Apirate {
