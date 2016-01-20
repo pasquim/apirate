@@ -31,6 +31,15 @@ namespace Apirate {
 		virtual IRequest* getRequest() = 0;
 
 		/**
+		* @brief Add a request to the client.
+		* @details This method allowd the implementor to add a request to the
+		* client.
+		* @param request The request to add to the client.
+		* @return Itself
+		*/
+		virtual IClient& addRequest(IRequest* request) = 0;
+
+		/**
 		* @brief Getter for the response
 		* @details This method allows the implementor to retrieve a response
 		* stored in the client.
@@ -42,10 +51,10 @@ namespace Apirate {
 		* @brief Add a response to the client.
 		* @details This method allowd the implementor to add a response to the
 		* client.
-		* @param response The response to add to the client in order to be sent.
+		* @param response The response to add to the client.
 		* @return Itself
 		*/
-		virtual IClient& addResponse(IReponse* respone) = 0;
+		virtual IClient& addResponse(IReponse* response) = 0;
 
 		/**
 		* @brief Getter for the client's socket

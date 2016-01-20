@@ -69,38 +69,39 @@ namespace Apirate {
 		* @brief Getter for the module's logger
 		* @details This method allows the implementor to retrieve the logger
 		* stored in the module.
-		* @return a reference to the logger.
+		* @return A reference to the logger.
 		*/
 		virtual ILogger& getLogger() = 0;
 
 		/**
 		* @brief Attach the module to a given execution process.
-		* @details This methos allows a module to attach itself to a given
+		* @details This method allows a module to attach itself to a given
 		* execution process.
 		* @param executionProcess The instance to which the module is going to
 		* be attached to.
-		* @return itself
+		* @return Itself
 		*/
 		virtual IModule& attachModule(IExecutionProcess& executionProcess) = 0;
 
 		/**
 		* @brief Detach the module to a given execution process.
-		* @details This methos allows a module to detach itself to a given
+		* @details This method allows a module to detach itself to a given
 		* execution process.
 		* @param executionProcess The instance from which the module is going to
 		* be detached.
-		* @return itself
+		* @return Itself
 		*/
 		virtual IModule& detachModule(IExecutionProcess& executionProcess) = 0;
 
 		/**
-		* @brief Executes the module's tasks on a query.
-		* @details This method allows the implementor to exeute the module's
-		* tasks on a given query.
-		* @param query The query to process.
-		* @return The processed query.
+		* @brief Sets the client in the module.
+		* @details This method allows the implementor to set a given client in the
+		* module. This way, it can handle the queries as it wants.
+		* @param client The client to set in the module.
+		* @return Itself
 		*/
-		virtual IQuery* exec(IQuery* query) = 0;
+		virtual IModule& setClient(IClient* client) = 0;
+
 
 		/**
 		* @brief Clones a module.
