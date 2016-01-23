@@ -81,7 +81,7 @@ namespace Apirate {
 		* be attached to.
 		* @return Itself
 		*/
-		virtual IModule& attachModule(IExecutionProcess& executionProcess) = 0;
+		virtual IModule& attachModule(IExecutionProcess* executionProcess) = 0;
 
 		/**
 		* @brief Detach the module to a given execution process.
@@ -91,7 +91,7 @@ namespace Apirate {
 		* be detached.
 		* @return Itself
 		*/
-		virtual IModule& detachModule(IExecutionProcess& executionProcess) = 0;
+		virtual IModule& detachModule(IExecutionProcess* executionProcess) = 0;
 
 		/**
 		* @brief Sets the client in the module.

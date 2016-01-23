@@ -15,6 +15,6 @@ namespace Apirate {
 	* the implementor.
 	*/
 	enum eLog {
-		INFO, WARNING, FATAL
+		DEBUG, INFO, WARNING, FATAL, TOTAL
 	};
 }
