@@ -11,10 +11,7 @@
 #include <eModule.h>
 #include <ILogger.h>
 #include <IQuery.h>
-
-namespace Apirate {
-	class IExecutionProcess;
-}
+#include <IExecutionProcess.h>
 
 namespace Apirate {
 	/**
@@ -71,7 +68,7 @@ namespace Apirate {
 		* stored in the module.
 		* @return A reference to the logger.
 		*/
-		virtual ILogger& getLogger() = 0;
+		virtual ILogger* getLogger() = 0;
 
 		/**
 		* @brief Attach the module to a given execution process.

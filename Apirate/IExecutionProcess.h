@@ -10,7 +10,10 @@
 
 #include <string>
 #include <IClient.h>
-#include <IModule.h>
+
+namespace Apirate {
+	class IModule;
+}
 
 namespace Apirate {
 	/**
