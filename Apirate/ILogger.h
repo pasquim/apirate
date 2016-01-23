@@ -32,6 +32,16 @@ namespace Apirate {
 		virtual ILogger& setLevel(eLog type) = 0;
 
 		/**
+		* @brief Logs a debug to a stream
+		* @details This method allows the implementor to identify debugs
+		* logged by the server.
+		* @param message The message to append to the stream.
+		* @return Itself
+		*/
+		virtual ILogger& debug(const std::string& message) = 0;
+
+
+		/**
 		* @brief Logs an information to a stream
 		* @details This method allows the implementor to identify informations
 		* logged by the server.
