@@ -9,7 +9,7 @@
 #pragma once
 
 #include <string>
-#include <IClient.h>
+#include "IClient.h"
 
 namespace Apirate {
 	class IModule;

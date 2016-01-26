@@ -8,11 +8,11 @@
 
 #pragma once
 
-#include <eModule.h>
-#include <ILogger.h>
-#include <IQuery.h>
-#include <IExecutionProcess.h>
-#include <IConfiguration.h>
+#include "eModule.h"
+#include "ILogger.h"
+#include "IQuery.h"
+#include "IExecutionProcess.h"
+#include "IConfiguration.h"
 
 namespace Apirate {
 	/**

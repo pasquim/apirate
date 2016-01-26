@@ -9,7 +9,7 @@
 #pragma once
 
 #include <string>
-#include <eLog.h>
+#include "eLog.h"
 
 namespace Apirate {
 	/**
