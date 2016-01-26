@@ -9,8 +9,8 @@
 #pragma once
 
 #include <string>
-#include <IQuery.h>
-#include <eMethod.h>
+#include "IQuery.h"
+#include "eMethod.h"
 
 namespace Apirate {
 	/**

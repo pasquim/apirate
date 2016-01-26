@@ -8,9 +8,9 @@
 
 #pragma once
 
-#include <IRequest.h>
-#include <IResponse.h>
-#include <ISocket.h>
+#include "IRequest.h"
+#include "IResponse.h"
+#include "ISocket.h"
 
 namespace Apirate {
 	/**

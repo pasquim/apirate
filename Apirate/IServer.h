@@ -10,9 +10,9 @@
 
 #include <string>
 #include <vector>
-#include <IExecutionProcess.h>
-#include <IModule.h>
-#include <ILogger.h> 
+#include "IExecutionProcess.h"
+#include "IModule.h"
+#include "ILogger.h" 
 
 namespace Apirate {
 	/**

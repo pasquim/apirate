@@ -10,7 +10,7 @@
 
 #include <map>
 #include <string>
-#include <eQuery.h>
+#include "eQuery.h"
 
 
 namespace Apirate {

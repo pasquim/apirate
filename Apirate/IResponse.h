@@ -9,7 +9,7 @@
 #pragma once
 
 #include <string>
-#include <IQuery.h>
+#include "IQuery.h"
 
 namespace Apirate {
 	/**
