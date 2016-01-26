@@ -12,6 +12,7 @@
 #include <ILogger.h>
 #include <IQuery.h>
 #include <IExecutionProcess.h>
+#include <IConfiguration.h>
 
 namespace Apirate {
 	/**
@@ -27,8 +28,10 @@ namespace Apirate {
 		* @brief Allows the module to init itself
 		* @details This method allows the implementor to have a specific
 		* location to build the module before it starts its execution.
+		* @details A pointer to the configuration of the executable.
+		* @return An int being the error or success code.
 		*/
-		virtual int init() = 0;
+		virtual int init(IConfiguration* conf = nullptr) = 0;
 
 		/**
 		* @brief Getter for the module's name
