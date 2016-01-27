@@ -66,7 +66,7 @@ namespace Apirate {
 		* @param name A unique identifier to the module to remove.
 		* @return Itself
 		*/
-		virtual IExecutionProcess& detachModule(const std::string& name) = 0;
+		virtual IModule* detachModule(const std::string& name) = 0;
 
 		/**
 		* @brief Setter for the client.
