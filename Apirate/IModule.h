@@ -42,6 +42,15 @@ namespace Apirate {
 		virtual const std::string& getName() const = 0;
 
 		/**
+		* @brief Function specifing if a special port is needed for the module.
+		* @details This function allows the module to specify to the server if
+		* the module needs to listen on a specific port.
+		* @return The value of the port to be listened on, 80 being the default
+		* value.
+		*/
+		virtual unsigned short listenPort() const = 0;
+
+		/**
 		* @brief Getter for the module's priority
 		* @details This method allows the implementor to retrieve the priority
 		* of the module.
