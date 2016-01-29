@@ -23,6 +23,8 @@ namespace Apirate {
 	class IModule {
 	public:
 		virtual ~IModule() {};
+    
+    typedef ISocket*    (*socketBuilder)(int fd);
 
 		/**
 		* @brief Allows the module to init itself
@@ -52,7 +54,7 @@ namespace Apirate {
     * @return A function pointer which act as a socket builder functor taking
     * a file descriptor in argument and returning instantiated socket.
 		*/
-		virtual ISocket* (*)(int) listen(unsigned short& port) const = 0;
+		virtual socketBuilder listen(unsigned short& port) const = 0;
 
 		/**
 		* @brief Getter for the module's priority
