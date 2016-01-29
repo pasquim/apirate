@@ -66,7 +66,7 @@ namespace Apirate {
 		* port through the socket object.
 		* @return The port of the client.
 		*/
-		virtual const unsigned short getPort() const = 0;
+		virtual unsigned short getPort() const = 0;
 
 		/**
 		* @brief An overloaded method to get what was read from the socket
