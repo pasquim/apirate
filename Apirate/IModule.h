@@ -42,13 +42,17 @@ namespace Apirate {
 		virtual const std::string& getName() const = 0;
 
 		/**
-		* @brief Function specifing if a special port is needed for the module.
+		* @brief Function used to listen on a special port if needed by the module.
 		* @details This function allows the module to specify to the server if
-		* the module needs to listen on a specific port.
-		* @return The value of the port to be listened on, 80 being the default
-		* value.
+		* the module needs to listen on a specific port. The function pointer allows
+    * the implementer to instantiate custom socket in its own network's logic 
+    * implementation.
+    * @param port the value of the port to be listened on. Default value
+    * must be 80 when module do not need to listen on a specific port.
+    * @return A function pointer which act as a socket builder functor taking
+    * a file descriptor in argument and returning instantiated socket.
 		*/
-		virtual unsigned short listenPort() const = 0;
+		virtual ISocket* (*)(int) listen(unsigned short& port) const = 0;
 
 		/**
 		* @brief Getter for the module's priority
