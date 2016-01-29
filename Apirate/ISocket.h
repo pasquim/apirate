@@ -69,24 +69,38 @@ namespace Apirate {
 		virtual const unsigned short getPort() const = 0;
 
 		/**
+		* @brief An overloaded method to get what was read from the socket
+		* @details This method allows the implementor to get what was read from
+		* the socket.
+		* @param bytesRead A reference who will contain the number of bytes readed.
+		* @return What was read.
+		*/
+		virtual char* read(int& bytesRead) = 0;
+
+		/**
+		* @brief An overloaded method to add someting to write on the socket
+		* @details This method allows the implementor to add something to write
+		* on the socket.
+		* @param toWrite What to write.
+		* @param bytesToWrite The size to write.
+		* @return Bytes to write or error.
+		*/
+		virtual int write(char* toWrite, unsigned int bytesToWrite) = 0;
+
+		/**
 		* @brief An overloaded method to read from the socket.
 		* @details This method allows the implementor to call a read fonction from
 		* the interface, if needed.
-		* @param buffer A pointer on the buffer where the read characters will be
-		* stored.
-		* @param maxSize The max number of characters to read.
-		* @return The number of characters read.
+		* @return The number of bytes readed.
 		*/
-		virtual int read(char *buffer, unsigned int maxSize) = 0;
+		virtual int read() = 0;
 
 		/**
 		* @brief An overloaded method to write on the socket.
 		* @details This method allows the implementor to call a write fonction from
 		* the interface, if needed.
-		* @param buffer A pointer on the buffer to write in the socket.
-		* @param size The size of the buffer to write.
 		* @return The number of characters written.
 		*/
-		virtual int write(char *buffer, unsigned int size) = 0;
+		virtual int write() = 0;
 	};
 }

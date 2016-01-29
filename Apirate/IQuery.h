@@ -92,9 +92,9 @@ namespace Apirate {
 		* @brief Getter for the data of the query
 		* @details This method allows the implementor to retrieve the data
 		* contained in the query.
-		* @return A string containing the data of the query.
+		* @return A char* containing the data of the query.
 		*/
-		virtual const std::string& getData() const = 0;
+		virtual const char* getData() const = 0;
 
 		/**
 		* @brief Setter for the data of the query
@@ -104,7 +104,7 @@ namespace Apirate {
 		* @param data The data to set in the query.
 		* @return Itself
 		*/
-		virtual IQuery& modifyData(const std::string &data) = 0;
+		virtual IQuery& modifyData(const char* data) = 0;
 
 		/**
 		* @brief Setter for the data of the query
@@ -113,7 +113,7 @@ namespace Apirate {
 		* @param data The data to set in the query.
 		* @return Itself
 		*/
-		virtual IQuery& setData(const std::string &data) = 0;
+		virtual IQuery& setData(const char* data) = 0;
 
 		/**
 		* @brief Getter for the version
