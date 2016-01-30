@@ -17,7 +17,7 @@ namespace Apirate {
 	* @details This class provides the implementor a simple class to handle its
 	* HTTP responses, which inherits from the IQuery class.
 	*/
-	class IResponse : public IQuery {
+	class IResponse : public virtual IQuery {
 	public:
 		virtual ~IResponse() {};
 
