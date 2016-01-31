@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "eModule.h"
 #include "ILogger.h"
 #include "IQuery.h"
@@ -23,8 +25,8 @@ namespace Apirate {
 	class IModule {
 	public:
 		virtual ~IModule() {};
-    
-    typedef ISocket*    (*socketBuilder)(int fd);
+
+		typedef ISocket*	(*socketBuilder)(int fd);
 
 		/**
 		* @brief Allows the module to init itself
@@ -47,7 +49,7 @@ namespace Apirate {
 		* @brief Function used to listen on a special port if needed by the module.
 		* @details This function allows the module to specify to the server if
 		* the module needs to listen on a specific port. The function pointer allows
-		* the implementer to instantiate custom socket in its own network's logic 
+		* the implementer to instantiate custom socket in its own network's logic
 		* implementation.
 		* @param port the value of the port to be listened on. Default value
 		* must be 80 when module do not need to listen on a specific port.
@@ -78,7 +80,7 @@ namespace Apirate {
 		* type.
 		* @return The type of the module.
 		*/
-		virtual eModule getModuleType() const = 0;
+		virtual std::vector<eModule> getModuleType() const = 0;
 
 		/**
 		* @brief Getter for the module's logger

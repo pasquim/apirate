@@ -10,6 +10,7 @@
 
 #include <map>
 #include <string>
+ 
 #include "eQuery.h"
 
 
@@ -92,9 +93,10 @@ namespace Apirate {
 		* @brief Getter for the data of the query
 		* @details This method allows the implementor to retrieve the data
 		* contained in the query.
+		* @param A reference on an int being the size of the data.
 		* @return A char* containing the data of the query.
 		*/
-		virtual const char* getData() const = 0;
+		virtual const char* getData(unsigned int& size) const = 0;
 
 		/**
 		* @brief Setter for the data of the query
@@ -102,18 +104,20 @@ namespace Apirate {
 		* the query allowing this operation only if the content has been
 		* retrieved at least once.
 		* @param data The data to set in the query.
+		* @param size The size of the data.
 		* @return Itself
 		*/
-		virtual IQuery& modifyData(const char* data) = 0;
+		virtual IQuery& modifyData(char* data, unsigned int size) = 0;
 
 		/**
 		* @brief Setter for the data of the query
 		* @details This method allows the implementor to set the content of
 		* the query.
 		* @param data The data to set in the query.
+		* @param size The size of the data.
 		* @return Itself
 		*/
-		virtual IQuery& setData(const char* data) = 0;
+		virtual IQuery& setData(char* data, unsigned int size) = 0;
 
 		/**
 		* @brief Getter for the version

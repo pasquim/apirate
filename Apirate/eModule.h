@@ -16,6 +16,6 @@ namespace Apirate {
 	* query.
 	*/
 	enum eModule {
-		CONNECTION, PREPROCESS, PROCESS, POSTPROCESS
+		CONNECTION, PREPROCESS, PROCESS, POSTPROCESS, ENUM_COUNT
 	};
 }

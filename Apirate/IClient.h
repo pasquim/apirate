@@ -41,21 +41,37 @@ namespace Apirate {
 		virtual IClient& addRequest(IRequest* request) = 0;
 
 		/**
+		 * @brief Gets the number of pending requests.
+		 * @details This method allows the implementor to get the number of
+		 * pending requests in the client.
+		 * @return pending requests, 0 if no request are available.
+		 */
+		virtual unsigned int	hasPendingRequest() = 0;
+
+		/**
 		* @brief Getter for the response
 		* @details This method allows the implementor to retrieve a response
 		* stored in the client.
 		* @return The response to send.
 		*/
-		virtual IResponse* getResponse() = 0;
+		virtual IResponse*		getResponse() = 0;
 
 		/**
 		* @brief Add a response to the client.
-		* @details This method allowd the implementor to add a response to the
+		* @details This method allows the implementor to add a response to the
 		* client.
 		* @param response The response to add to the client.
 		* @return Itself
 		*/
-		virtual IClient& addResponse(IResponse* response) = 0;
+		virtual IClient&		addResponse(IResponse* response) = 0;
+
+		/**
+		 * @brief Gets the number of pending responses.
+		 * @details This method allows the implementor to get the number of
+		 * pending responses in the client.
+		 * @return pending responses, 0 if all responses were send.
+		 */
+		virtual unsigned int	hasPendingResponse() const = 0;
 
 		/**
 		* @brief Getter for the client's socket
@@ -63,6 +79,6 @@ namespace Apirate {
 		* associated to a client.
 		* @return The client's socket.
 		*/
-		virtual const ISocket& getSocket() const = 0;
+		virtual ISocket& getSocket() = 0;
 	};
 }
