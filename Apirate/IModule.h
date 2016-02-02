@@ -15,6 +15,7 @@
 #include "IQuery.h"
 #include "IExecutionProcess.h"
 #include "IConfiguration.h"
+#include "IMutex.h"
 
 namespace Apirate {
 	/**
@@ -32,10 +33,11 @@ namespace Apirate {
 		* @brief Allows the module to init itself
 		* @details This method allows the implementor to have a specific
 		* location to build the module before it starts its execution.
-		* @details A pointer to the configuration of the executable.
+		* @param conf A pointer to the configuration of the executable.
+		* @param mutex A pointer on a mutex, if thread-safe operations must be performed.
 		* @return An int being the error or success code.
 		*/
-		virtual int init(IConfiguration* conf = nullptr) = 0;
+		virtual int init(IConfiguration* conf = nullptr, IMutex* mutex = nullptr) = 0;
 
 		/**
 		* @brief Getter for the module's name

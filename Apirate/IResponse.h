@@ -54,5 +54,14 @@ namespace Apirate {
 		* @return Itself
 		*/
 		virtual IResponse& setMessage(const std::string& message) = 0;
+
+		/**
+		* @brief A builder function for the response
+		* @details This method allows the implementor to build a response based
+		* on the content of the IResponse.
+		* @param size A reference on the size of the built response.
+		* @return A char* containing the string form of the response.
+		*/
+		virtual char* buildResponse(unsigned int& size) const = 0;
 	};
 }

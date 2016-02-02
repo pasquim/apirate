@@ -71,7 +71,7 @@ namespace Apirate {
 		 * pending responses in the client.
 		 * @return pending responses, 0 if all responses were send.
 		 */
-		virtual unsigned int	hasPendingResponse() const = 0;
+		virtual unsigned int	hasPendingResponse() = 0;
 
 		/**
 		* @brief Getter for the client's socket
